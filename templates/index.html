@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+     <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+    <title>Machine Learning Task</title>
+  </head>
+  <body>
+      <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+        <div class="container">
+          <a class="navbar-brand" href="/">Tasks</a>
+          <a class="btn btn-outline-primary my-2 my-sm-0" href="{{ url_for('extract') }}">Extract Text</a>
+          <a class="btn btn-outline-primary my-2 my-sm-0" href="{{ url_for('detect') }}">Object Detection</a>
+        </div>
+      </nav>
+      <div class="container marketing">
+        <h1 align="center"> SELECT TASK </h1>
+        <div class="row justify-content-md-center">
+          <div class="col-lg-4 mr-4">
+            <img class="rounded-circle" src="https://e7.pngegg.com/pngimages/399/734/png-clipart-optical-character-recognition-computer-icons-tesseract-square-material-miscellaneous-blue.png" alt="Generic placeholder image" width="140" height="140">
+            <h2>Extract Text</h2>
+            <p>To extract text from an image, select this task.</p>
+            <p><a class="btn btn-primary" href="{{ url_for('extract') }}" role="button">Try it out</a></p>
+          </div>
+          <div class="col-lg-4">
+            <img class="rounded-circle" src="https://media.istockphoto.com/vectors/object-detection-app-icon-vector-id1148028199" alt="Generic placeholder image" width="140" height="140">
+            <h2>Object Detection</h2>
+            <p>To detect objects in an image, select this task.</p>
+            <p><a class="btn btn-primary" href="{{ url_for('detect') }}" role="button">Try it out</a></p>
+          </div>
+        </div>
+      </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+     <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+    <title>Machine Learning Task</title>
+  </head>
+  <body>
+      <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+      <div class="container">
+        <a class="navbar-brand" href="/">Tasks</a>
+        <a class="btn btn-outline-primary my-2 my-sm-0" href="{{ url_for('extract') }}">Extract Text</a>
+        <a class="btn btn-outline-primary my-2 my-sm-0" href="{{ url_for('detect') }}">Object Detection</a>
+      </div>
+      </nav>
+      <div class="center">
+        <div class="form-input">
+          <form id='upload-file' method='post' enctype="multipart/form-data" >
+             <label for="imageUpload">Upload Image</label>
+             <p><input type="file" name="file" id="imageUpload" accept=".png, .jpg, .jpeg" onchange="showPreview(event);"/></p>
+             <div class="preview">
+               <img id="file-ip-1-preview">
+             </div>
+          </div>
+        </div>
+        <div align="center" class="container">
+          <label class="btn btn-primary btn-lg" for="extract">Detect Objects</label>
+          <p><input type="submit" name="value"  id="extract" style="display:none;" /></p>
+        </div>
+          </form>
+          <div class="container mt-4">
+            {% with messages = get_flashed_messages(with_categories=True) %}
+              {% if messages %}
+                {% for category, message in messages %}
+                  <div class="alert alert-{{ category }}">
+                    {{ message }}
+                  </div>
+                {% endfor %}
+              {% endif %}
+            {% endwith %}
+          </div>
+          <!-- </form>
+          {% if objects %}
+            <div class="alert alert-primary">
+              The predicted result is -
+              {% for object in objects %}
+                {{ object }}
+                \n
+              {% endfor %}
+            </div>
+          {% endif %} -->
+
+
+    <script>
+    function showPreview(event){
+      if(event.target.files.length > 0){
+        var src = URL.createObjectURL(event.target.files[0]);
+        var preview = document.getElementById("file-ip-1-preview");
+        preview.src = src;
+        preview.style.display = "block";
+      }
+    }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
