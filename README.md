@@ -9,7 +9,3 @@ Extract Text and Detect Objects in an image.
 ```python app.py```
   <li> Finally, you wil get a url like this - <b> http://127.0.0.1:5000/ </b>. Copy that in your web browser and now you can extract text or detect objects in an image. </li>
 </ul>
-
-## Demonstration Video
-
-[Click Here](https://drive.google.com/file/d/1U7irqUKq20K4EIqvxgwBdJHhBrY6JeeE/view?usp=sharing)
