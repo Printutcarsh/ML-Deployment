@@ -1,4 +1,4 @@
-# ML-Deployment
+# Text-Extraction-and-Object-Detection-Deployment
 Extract Text and Detect Objects in an image.
 ## Step by Step Implementation Guide
 <ul>
